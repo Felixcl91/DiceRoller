@@ -10,6 +10,8 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,9 +22,12 @@ class MainActivity : AppCompatActivity() {
            // Toast.makeText(this, "button cliked", Toast.LENGTH_LONG).show()
             rollDice()
         }
-
+        diceImage = findViewById(R.id.dice_image)
     }
 
+    /*
+    metodo muestra un imagen con random dandole al boton
+     */
     private fun rollDice() {
         //val resultText: TextView = findViewById(R.id.result_text)
 
@@ -36,9 +41,6 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-
-        val diceImage : ImageView = findViewById(R.id.dice_image)
-
         diceImage.setImageResource(drawableResource)
 
         //resultText.text = randomInt.toString()
